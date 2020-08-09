@@ -38,7 +38,7 @@ Running the following set of commands in the terminal will remove all traces.
 
 ```bash
 cd ~
-launchctl unload local.backgroundchanger.plist
+launchctl unload Library/LaunchAgents/local.backgroundchanger.plist
 rm /Users/aaronyoung/Library/LaunchAgents/local.backgroundchanger.plist
 rm -fr background-changer
 ```
