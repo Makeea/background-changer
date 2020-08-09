@@ -3,10 +3,10 @@
 <plist version="1.0">
   <dict>
     <key>Label</key>
-    <string>local.changedesktop</string>
+    <string>local.backgroundchanger</string>
     <key>ProgramArguments</key>
     <array>
-       <string>home/desktopchanger/desktop_changer.sh</string>
+       <string>home/background-changer/background_changer.sh</string>
     </array>
     <key>StartCalendarInterval</key>
     <dict>

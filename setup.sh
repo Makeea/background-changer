@@ -20,7 +20,7 @@
 
     DB=~/Library/Application\ Support/Dock/desktoppicture.db
     timestamp=$(date '+%H-%M-%S')
-    PLIST_NAME=changedesktop
+    PLIST_NAME=backgroundchanger
 
 # # # # # # # # # # # # # # # #
 # DISABLE SQLITE3 CONFIG FILE

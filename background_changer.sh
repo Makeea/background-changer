@@ -20,12 +20,12 @@
             echo "waiting for $IMAGE_WAIT_TIME seconds for image $1/$2"
             sleep $IMAGE_WAIT_TIME
         fi
-        rm ~/desktopchanger/$1.jpg
-        curl -k -L https://source.unsplash.com/3840x2160/?featured --output ~/desktopchanger/$1.jpg
+        rm ~/background-changer/$1.jpg
+        curl -k -L https://source.unsplash.com/3840x2160/?featured --output ~/background-changer/$1.jpg
     }
 
     function restore_preferences {
-        cat ~/desktopchanger/preferences.sql | sqlite3 "$DB" > /dev/null
+        cat ~/background-changer/preferences.sql | sqlite3 "$DB" > /dev/null
     }
 
 if [ -f ${HOME}/.sqliterc ]; then
@@ -56,7 +56,7 @@ counter=0
 sqlite3 "$DB" "select distinct data_id from preferences where key = 1" | while read rowid
     do
         ((counter++))
-        sqlite3 "$DB" "INSERT INTO data(rowid, value) VALUES($rowid, \"~/desktopchanger/$counter.jpg\");"
+        sqlite3 "$DB" "INSERT INTO data(rowid, value) VALUES($rowid, \"~/background-changer/$counter.jpg\");"
     done
 
 killall Dock
