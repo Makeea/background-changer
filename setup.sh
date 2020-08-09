@@ -20,6 +20,7 @@
 
     DB=~/Library/Application\ Support/Dock/desktoppicture.db
     timestamp=$(date '+%H-%M-%S')
+    PLIST_NAME=changedesktop
 
 # # # # # # # # # # # # # # # #
 # DISABLE SQLITE3 CONFIG FILE
@@ -35,6 +36,7 @@ killall Dock
 
 # wait_for_keypress "Select 3 images for the desktops then press any key to continue."
 ./wait.sh
+killall System\ Preferences > /dev/null 2>&1
 
 echo ".mode insert\n.output preferences.sql" > ~/.sqliterc
 sqlite3 "$DB" 'select * from preferences'
@@ -45,3 +47,12 @@ sed -i '' 's/table/preferences/g' preferences.sql
 if [ -f ${HOME}/.sqliterc-$timestamp ]; then
       mv ${HOME}/.sqliterc-$timestamp ${HOME}/.sqliterc
 fi
+
+if [ -f ~/Library/LaunchAgents/local.${PLIST_NAME}.plist ]; then
+    launchctl unload ~/Library/LaunchAgents/local.${PLIST_NAME}.plist
+    rm ~/Library/LaunchAgents/local.${PLIST_NAME}.plist
+fi
+cp local.${PLIST_NAME}.plist ~/Library/LaunchAgents/
+sed -i "" "s/home/${HOME//\//\\/}/g" ~/Library/LaunchAgents/local.${PLIST_NAME}.plist
+
+launchctl load ~/Library/LaunchAgents/local.${PLIST_NAME}.plist
