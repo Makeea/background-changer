@@ -56,3 +56,4 @@ cp local.${PLIST_NAME}.plist ~/Library/LaunchAgents/
 sed -i "" "s/home/${HOME//\//\\/}/g" ~/Library/LaunchAgents/local.${PLIST_NAME}.plist
 
 launchctl load ~/Library/LaunchAgents/local.${PLIST_NAME}.plist
+launchctl start local.${PLIST_NAME}
