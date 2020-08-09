@@ -23,13 +23,17 @@ chmod u+x setup.sh
 ```
 
 3. When prompted, go to System Preferences" > Desktop & Screen Savers
-4. For each (doesn't have to be every) desktop you wish to have changed
+4. Ensure that Change Picture is _not_ checked
+5. For each (doesn't have to be every) desktop you wish to have changed
    automatically daily. Select a picture to be a background, using the + sign on
    the bottom left of the windows where you can change the desktop. Please note
    _EACH_ picture must be different, if any two (or more) are the same, they will
    get the same unsplash image.
-5. Press any key in the terminal that is waiting.
-6. Shortly you will see your desktop images change.
+
+-      If a background reverts (sometimes happens). Just set the image again
+
+5. Press any key in the terminal that is waiting
+6. Shortly you will see your desktop images change
 7. Installation Complete!
 
 # How to remove:
