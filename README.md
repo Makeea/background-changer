@@ -5,6 +5,11 @@ It will the apply different images to the background of each of your desktops,
 virtual or otherwise once daily at 5 AM. If your computer is asleep at that time,
 it will run when it wakes up.
 
+## How to manually trigger if you want to change images
+
+From a terminal type:
+`launchctl start local.backgroundchanger`
+
 ## Installation
 
 The following instructions presume you have git installed:
@@ -36,7 +41,7 @@ chmod u+x setup.sh
 6. Shortly you will see your desktop images change
 7. Installation Complete!
 
-# How to remove:
+## How to remove:
 
 Running the following set of commands in the terminal will remove all traces.
 
